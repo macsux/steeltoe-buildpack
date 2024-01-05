@@ -33,19 +33,6 @@ public class ActuatorInjector : IHostingStartup, IStartupFilter
         builder.AddMappingsActuator();
         builder.AddCloudFoundryActuator();
         builder.AddAllActuators();
-        // var config = new ConfigurationBuilder().AddEnvironmentVariables().Build();
-        // var services = new ServiceCollection();
-        // services.AddSingleton<IConfiguration>(config);
-        // var actuatorRegistrations = services.AddAllActuators().Where(x => x.ServiceType != typeof(IConfiguration)).ToList();
-        //
-        // builder.ConfigureServices(c =>
-        // {
-        //     foreach (var serviceDescriptor in actuatorRegistrations)
-        //     {
-        //         Console.WriteLine($"{serviceDescriptor.ServiceType} {serviceDescriptor.ImplementationType} {serviceDescriptor.Lifetime}");
-        //         c.Add(serviceDescriptor);
-        //     }
-        // });
     }
 
     public Action<IApplicationBuilder> Configure(Action<IApplicationBuilder> next)
