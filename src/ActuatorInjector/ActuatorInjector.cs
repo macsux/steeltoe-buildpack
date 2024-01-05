@@ -19,6 +19,7 @@ public class ActuatorInjector : IHostingStartup, IStartupFilter
         Console.WriteLine("Injecting Steeltoe");
         builder.ConfigureServices(services => services.TryAddEnumerable(ServiceDescriptor.Singleton<IStartupFilter>(this)));
 
+        builder.ConfigureServices(c => c.AddSteeltoeCors());
         builder.ConfigureAppConfiguration(c => c.AddCloudFoundry());
         builder.AddHypermediaActuator();
         builder.AddThreadDumpActuator();
@@ -31,7 +32,7 @@ public class ActuatorInjector : IHostingStartup, IStartupFilter
         builder.AddTraceActuator();
         builder.AddMappingsActuator();
         builder.AddCloudFoundryActuator();
-        //builder.AddAllActuators();
+        builder.AddAllActuators();
         // var config = new ConfigurationBuilder().AddEnvironmentVariables().Build();
         // var services = new ServiceCollection();
         // services.AddSingleton<IConfiguration>(config);
@@ -64,4 +65,7 @@ public class ActuatorInjector : IHostingStartup, IStartupFilter
             next(app);
         };
     }
+
+
+    
 }
