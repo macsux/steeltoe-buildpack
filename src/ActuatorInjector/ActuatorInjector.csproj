@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Steeltoe.Extensions.Configuration.CloudFoundryCore" Version="3.2.6" />
+      <PackageReference Include="Steeltoe.Management.EndpointCore" Version="3.2.6" />
+    </ItemGroup>
+
+</Project>
