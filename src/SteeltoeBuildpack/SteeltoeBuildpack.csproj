@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+<!--    <Import Project="..\..\testing.props"/>-->
+    <PropertyGroup>
+        <TargetLatestRuntimePatch>true</TargetLatestRuntimePatch>
+        <RootNamespace>CloudFoundry.Buildpack.V2.SteeltoeBuildpack</RootNamespace>
+        <AssemblyName>buildpack</AssemblyName>
+        <OutputType>Exe</OutputType>
+        <Nullable>enable</Nullable>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <WarningsNotAsErrors>IL2026;IL2104</WarningsNotAsErrors>
+        <LangVersion>latest</LangVersion>
+        <OutputType>Exe</OutputType>
+        <TargetFrameworks>net8.0;net48</TargetFrameworks>
+        <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+        <IsPackable>false</IsPackable>
+    </PropertyGroup>
+    <PropertyGroup Condition="$(TargetFramework) != 'net48'">
+        <PublishTrimmed>true</PublishTrimmed>
+        <PublishSingleFile>true</PublishSingleFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Nerdbank.GitVersioning" Version="3.7.48-alpha">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+        
+
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="CloudFoundry.Buildpack.V2.Analyzers" Version="4.*"/>
+        <PackageReference Include="CloudFoundry.Buildpack.V2.Lib" Version="4.*"/>
+    </ItemGroup>
+</Project>

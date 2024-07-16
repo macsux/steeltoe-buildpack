@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <OutputType>Library</OutputType>
+        <IsPackable>true</IsPackable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Steeltoe.Extensions.Configuration.CloudFoundryCore" Version="3.2.7" />
+      <PackageReference Include="Steeltoe.Management.EndpointCore" Version="3.2.7" />
+    </ItemGroup>
+
+</Project>

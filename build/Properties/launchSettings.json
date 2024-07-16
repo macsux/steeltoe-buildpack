@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Publish Buildpack": {
+      "commandName": "Project",
+      "commandLineArgs": "PublishBuildpack"
+    },
+    "Release to Github": {
+      "commandName": "Project",
+      "commandLineArgs": "GithubRelease"
+    }
+  }
+}
